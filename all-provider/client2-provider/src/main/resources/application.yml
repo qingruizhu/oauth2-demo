@@ -1,0 +1,35 @@
+server:
+  port: 8082
+  servlet:
+    context-path: ""
+spring:
+  application:
+    name: "@pom.artifactId@"
+  redis:
+    host: localhost
+    port: 6379
+
+
+security:
+  oauth2:
+    #    client:
+    #      client-id: client2-client
+    #      client-secret: client2-secret-8888
+    #      user-authorization-uri: http://localhost:8080/oauth/authorize
+    #      access-token-uri: http://localhost:8080/oauth/token
+    # redis 存储token方式
+    #    resource:
+    #      id: client2-client
+    #      user-info-uri: user-info
+    #    authorization:
+    #      check-token-access: http://localhost:8080/oauth/check_token
+    # jwt 存储token方式
+    resource:
+      jwt:
+        #        key-uri: http://localhost:8080/oauth/token_key
+        key-value: nicaicaikan
+
+dove:
+  oauth2:
+    ignore:
+      urls: /common/**,/hhh/**
